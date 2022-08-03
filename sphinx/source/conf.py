@@ -32,7 +32,13 @@ extensions = [
     "sphinx.ext.doctest",
     "sphinx.ext.mathjax",
     "sphinx.ext.githubpages",
-    "nbsphinx",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
+    "sphinx_design",
+    "sphinx_copybutton",
+    "jupyter_sphinx",
+    "myst_nb",
+    "sphinx_togglebutton",
 ]
 
 templates_path = ['_templates']
@@ -41,15 +47,16 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'pydata_sphinx_theme'
+html_theme = "pydata_sphinx_theme"
 html_static_path = ['_static']
+json_url = "https://quant-dc.github.io/sphinx-version-example/_static/switcher.json"
 
 switcher_version = release
 
 html_theme_options = {
     "navbar_end": ["version-switcher", "navbar-icon-links"],
     "switcher":{
-        "json_url": "https://quant-dc.github.io/sphinx-version-example/_static/switcher.json",
+        "json_url": json_url,
         "version_match": switcher_version,
     }
 }
