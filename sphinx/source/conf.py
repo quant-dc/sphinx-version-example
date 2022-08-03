@@ -49,7 +49,7 @@ switcher_version = release
 html_theme_options = {
     "navbar_end": ["version-switcher", "navbar-icon-links"],
     "switcher":{
-        "json_url": "",
+        "json_url": "https://quant-dc.github.io/sphinx-version-example/_static/switcher.json",
         "version_match": switcher_version,
     }
 }

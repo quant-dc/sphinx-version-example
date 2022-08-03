@@ -47,12 +47,12 @@ def build(kind, num_jobs):
                     {
                         "name": "Latest",
                         "version": str(src_version),
-                        "url": "...",
+                        "url": "https://quant-dc.github.io/sphinx-version-example/index.html",
                     },
                     {
                         "name": str(version),
                         "version": str(version),
-                        "url": "...",
+                        "url": f"https://quant-dc.github.io/sphinx-version-example/archive/{version}/index.html",
                     },
                 ]
                 old_version_destination = history_destination / str(version)
@@ -102,8 +102,10 @@ def build(kind, num_jobs):
             f.write(src.__version__)
 
     if kind == "html":
+        gh_pages_folder = DOC_PATH.parent / "docs"
+        shutil.rmtree(gh_pages_folder)
         shutil.copytree(
-            BUILD_PATH / "html", DOC_PATH.parent / "docs", dirs_exist_ok=True
+            BUILD_PATH / "html", gh_pages_folder, dirs_exist_ok=True
         )
 
 @main.command()
