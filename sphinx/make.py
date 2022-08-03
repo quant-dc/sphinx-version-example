@@ -101,6 +101,11 @@ def build(kind, num_jobs):
         with open(version_file, mode="w") as f:
             f.write(src.__version__)
 
+    if kind == "html":
+        shutil.copytree(
+            BUILD_PATH / "html", DOC_PATH.parent / "docs", dirs_exist_ok=True
+        )
+
 @main.command()
 @click.option("--current/--all", default=False)
 def clean(current):
