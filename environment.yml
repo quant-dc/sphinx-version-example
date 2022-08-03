@@ -1,0 +1,15 @@
+name: sphinx-version-example
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - sphinx
+  - matplotlib
+  - pydata-sphinx-theme
+  - numpydoc
+  - nbsphinx
+  - nbformat
+  - notebook
+  - click
+  - myst-parser
+  - loguru
